@@ -6,7 +6,14 @@ const LoginUsers = [
     password: '123456',
     avatar: require('../assets/logo.png'),
     name: '马宏德'
-  }
+  },
+  {
+    id: 2,
+    username: 'jingmiao',
+    password: '123456',
+    avatar: require('../assets/logo.png'),
+    name: '景苗'
+  }  
 ];
 
 const Users = [];

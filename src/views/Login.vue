@@ -63,7 +63,7 @@
                 });
               } else {
                 sessionStorage.setItem('user', JSON.stringify(user));
-                this.$router.push({ path: '/home' });
+                this.$router.push({ path: '/home/dashboard-v1' });
               }
             });
           } else {
