@@ -59,12 +59,17 @@
     opacity: 0
   }
 
+  html {
+    width: 100%;
+    height: 100%;
+  }
   
   body {
-    /*background-color: #324057;*/
     margin: 0px;
     padding: 0px;
-    /*background: url(assets/bg1.jpg) center !important;
+    width: 100%;
+    height: 100%;
+    background: url(~assets/bg1.jpg) center no-repeat;
     background-size: cover;*/
     background: #1f2d3d;
     font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
