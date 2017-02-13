@@ -27,7 +27,7 @@ export default {
 
 <style lang="less" scoped>
 	.panel-center {
-		background: #3b3f46;
+		background: #f2f4f7;
 		position: absolute;
 		top: 60px;
 		bottom: 0px;

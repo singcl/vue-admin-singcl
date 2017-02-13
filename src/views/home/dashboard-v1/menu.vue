@@ -6,7 +6,7 @@
         @open="handleopen" 
         @close="handleclose" 
         @select="handleselect"
-        theme="dark" 
+        theme="light" 
         unique-opened 
         router>
         <template

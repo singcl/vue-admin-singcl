@@ -1,17 +1,35 @@
 <template>
 <el-col :span="24" class="home-header">
-	<el-col :span="20" class="home-header__logo">
+	<el-col :span="6" class="home-header__logo">
 		<span class="logo-img"></span>
 		<span class="logo-text">
 			<span>AD</span>
 			<i class="logo-text__af logo-text__af--color">MIN</i>
 		</span>
 	</el-col>
-	<el-col :span="4" class="home-header__nav">
-		<el-dropdown trigger="click">
+	<el-col :span="18" class="home-header__nav">
+		<!-- email -->
+		<el-badge :value="12" :max="99" is-dot class="nav-task">
+			<i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+		</el-badge>
+		<!-- email -->
+		<!-- notification -->
+		<el-badge :value="12" :max="99" class="nav-task">
+			<i class="fa fa-bell fa-lg" aria-hidden="true"></i>
+		</el-badge>
+		<!-- /notification -->
+
+		<!-- Task item -->
+		<el-badge :value="200" :max="99" class="nav-task">
+			<i class="fa fa-flag fa-lg " aria-hidden="true"></i>
+		</el-badge>
+		<!-- /Task item -->
+
+		<!-- User Account Menu -->
+		<el-dropdown trigger="click" class="nav-account">
 			<span class="el-dropdown-link nav-user nav-user--color">
 				<img :src="this.sysUserAvatar" class="nav-user__avatar">
-				{{sysUserName}}
+				<span class="nav-user__name">{{sysUserName}}</span>
 			</span>
 			<el-dropdown-menu slot="dropdown">
 				<el-dropdown-item>我的消息</el-dropdown-item>
@@ -19,6 +37,7 @@
 				<el-dropdown-item divided @click.native="logout">退出登录</el-dropdown-item>
 			</el-dropdown-menu>
 		</el-dropdown>
+		<!-- /User Account Menu -->
 	</el-col>
 </el-col>
 </template>
@@ -61,7 +80,6 @@ export default {
 <style lang="less" scoped>
     .home-header {
 		height: 60px;
-		line-height: 60px;
 		background: #2d3034;
 		color: #c0ccda;
 		&__nav {
@@ -84,11 +102,16 @@ export default {
 	}
 
 	.logo-text {
+		line-height: 60px;
 		&__af {
 			&--color {
 				color: #20a0ff;
 			}
 		}
+	}
+
+	.nav-account {
+		margin-left: 50px;
 	}
 
 	.nav-user {
@@ -103,5 +126,12 @@ export default {
 			margin: 10px 0px 10px 10px;
 			float: right;
 		}
+		&__name {
+			line-height: 60px;
+		}
+	}
+
+	.nav-task {
+		margin-right: 30px;
 	}
 </style>
