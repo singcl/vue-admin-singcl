@@ -19,7 +19,7 @@
 <script>
 export default {
 
-  name: 'right-detail',
+  name: 'main',
 
   data () {
     return {

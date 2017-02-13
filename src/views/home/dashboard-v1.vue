@@ -1,13 +1,13 @@
 <template>
 <el-col :span="24" class="panel-center">
-	<home-left-aside></home-left-aside>
-	<home-right-detail></home-right-detail>
+	<home-aside-menu></home-aside-menu>
+	<home-main></home-main>
 </el-col>
 </template>
 
 <script>
-import HomeLeftAside from './dashboard-v1/left-aside'
-import HomeRightDetail from './dashboard-v1/right-detail'
+import HomeAsideMenu from './dashboard-v1/menu'
+import HomeMain from './dashboard-v1/main'
 
 export default {
 
@@ -19,8 +19,8 @@ export default {
     };
   },
   components: {
-  	HomeLeftAside,
-  	HomeRightDetail
+  	HomeAsideMenu,
+  	HomeMain
   }
 };
 </script>
