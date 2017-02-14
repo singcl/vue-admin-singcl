@@ -8,5 +8,5 @@ export const chineseMenu = (value) => {
 		page4: '页面四',
 		page5: '页面五',
 		page6: '页面六'
-	}[value];
+	}[value] || '暂无';
 };
