@@ -5,10 +5,10 @@
         :default-active="$route.path" 
         @open="handleopen" 
         @close="handleclose" 
-        @select="handleselect"
+        @select="changeMenu"
         theme="light" 
         unique-opened 
-        router>
+        >
         <template
             v-for="(item,index) in option.children" 
             v-if="!item.hidden">
@@ -17,13 +17,13 @@
                 v-if="!item.leaf">
                 <template slot="title">
                     <i :class="item.iconCls"></i>
-                    {{item.name}}
+                    {{item.name | chineseMenu}}
                 </template>
                 <el-menu-item 
                     v-for="child in item.children" 
-                    :index="child.path" 
+                    :index="child.name" 
                     v-if="!child.hidden">
-                        {{child.name}}
+                        {{child.name | chineseMenu}}
                 </el-menu-item>
             </el-submenu>
             <el-menu-item 
@@ -48,14 +48,18 @@ export default {
 
     };
   },
+  computed: {
+    //
+  },
   methods: {
     handleopen() {
-        //console.log('handleopen');
+       //alert(1)
     },
     handleclose() {
         //console.log('handleclose');
     },
-    handleselect: function (a, b) {
+    changeMenu: function (index, arr) {
+        this.$router.push({path: arr[1]});
     }
   },
 };

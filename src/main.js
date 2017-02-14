@@ -9,12 +9,15 @@ import VueRouter from 'vue-router'
 //import store from './vuex/store'
 import Vuex from 'vuex'
 import routes from './routes'
-import Mock from './mock';
+import Mock from './mock'
+import { chineseMenu } from './utils/filters'
 Mock.bootstrap();
 
 Vue.use(ElementUI)
 Vue.use(VueRouter)
 Vue.use(Vuex)
+
+Vue.filter('chineseMenu', chineseMenu)
 
 const router = new VueRouter({
   routes

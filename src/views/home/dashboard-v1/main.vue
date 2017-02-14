@@ -1,10 +1,10 @@
 <template>
 <section class="detail-c">
 	<el-col :span="24" class="dtail-c__nav">
-		<strong class="nav-name">{{$route.name}}</strong>
+		<strong class="nav-name">{{$route.name | chineseMenu}}</strong>
 		<el-breadcrumb separator="/" class="nav-path">
 			<el-breadcrumb-item class="nav-path__item" v-for="item in $route.matched">
-				{{ item.name }}
+				{{ item.name | chineseMenu }}
 			</el-breadcrumb-item>
 		</el-breadcrumb>
 	</el-col>
@@ -23,7 +23,7 @@ export default {
 
   data () {
     return {
-
+    	bread:[]
     };
   }
 };
