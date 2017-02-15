@@ -90,7 +90,7 @@
                 });
               } else {
                 sessionStorage.setItem('user', JSON.stringify(user));
-                this.$router.push({ path: '/home/dashboard-v1/page1' });
+                this.$router.push({ path: '/' });
               }
             });
           } else {

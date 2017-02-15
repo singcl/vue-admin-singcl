@@ -1,6 +1,6 @@
 <template>
 <aside class="aside">
-    <div v-for="(option,number) in $router.options.routes" v-if="!option.hidden">
+    <div v-for="(option,number) in $router.options.routes" v-if="option.meta.show">
     <el-menu 
         :default-active="$route.path" 
         @open="handleopen" 
@@ -11,10 +11,11 @@
         >
         <template
             v-for="(item,index) in option.children" 
-            v-if="!item.hidden">
+            v-if="!item.meta.hidden">
             <el-submenu 
                 :index="index+''" 
-                v-if="!item.leaf">
+                v-if="item.children"
+                >
                 <template slot="title">
                     <i :class="item.iconCls"></i>
                     {{item.name | chineseMenu}}
@@ -22,15 +23,14 @@
                 <el-menu-item 
                     v-for="child in item.children" 
                     :index="child.name" 
-                    v-if="!child.hidden">
+                    >
                         {{child.name | chineseMenu}}
                 </el-menu-item>
             </el-submenu>
             <el-menu-item 
-                v-if="item.leaf&&item.children.length>0" 
-                :index="item.children[0].path">
-                    <i :class="item.iconCls"></i>
-                    {{item.children[0].name}}
+                v-if="!item.children" 
+                :index="item.name">
+                    {{item.name | chineseMenu}}
             </el-menu-item>
         </template>
     </el-menu>
@@ -58,8 +58,8 @@ export default {
     handleclose() {
         //console.log('handleclose');
     },
-    changeMenu: function (index, arr) {
-        this.$router.push({path: arr[1]});
+    changeMenu: function (index) {
+        this.$router.push({name: index});
     }
   },
 };
@@ -67,6 +67,11 @@ export default {
 
 <style lang="less" scoped>
     .aside {
+        position: absolute;
+        top: 60px;
+        bottom: 0;
+        left: 0;
         width: 230px;
+        background-color: #eaf1f1;
     }
 </style>

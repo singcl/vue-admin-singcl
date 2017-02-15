@@ -1,12 +1,17 @@
 <template>
 	<el-row class="panel">
-		<home-header></home-header>
-		<router-view></router-view>
+		<!-- <nprogress-container></nprogress-container> -->
+	    <home-header></home-header>
+	    <home-aside-menu></home-aside-menu>
+	    <home-main></home-main>
+	    <!-- <footer-bar></footer-bar> -->
 	</el-row>
 </template>
 
 <script>
-	import HomeHeader from './home/home-header'
+	import HomeHeader from './home/header'
+	import HomeAsideMenu from './home//menu'
+	import HomeMain from './home/main'
 
 	export default {
 		data() {
@@ -16,7 +21,9 @@
 		},
 		
 		components: {
-			HomeHeader
+			HomeHeader,
+		    HomeAsideMenu,
+		    HomeMain
 		}
 	}
 

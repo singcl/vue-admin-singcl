@@ -3,46 +3,62 @@ import Login from 'views/Login'
 import Home from 'views/Home'
 import NotFound from 'views/404'
 
-import DashboardV1 from 'views/home/dashboard-v1'
-import Page1 from 'views/home/dashboard-v1/nav1/Page1'
-import Page4 from 'views/home/dashboard-v1/nav2/Page4'
-import Page5 from 'views/home/dashboard-v1/nav2/Page5'
-import Page6 from 'views/home/dashboard-v1/nav3/Page6'
+import HomeDefault from 'views/home/index'
+
+import Forms from 'views/home/forms/index'
+import Page1 from 'views/home/forms/Page1'
+
+import Page4 from 'views/home/ui/Page4'
+import Page5 from 'views/home/ui/Page5'
+import Page6 from 'views/home/table/Page6'
 
 let routes = [
     {
         path: '/login',
         component: Login,
         name: 'login',
-        hidden: true
+        meta: {},
     },
     {
         path: '/404',
         component: NotFound,
         name: 'not-found',
-        hidden: true
+        meta: {},
     },
     {
-    	path: '/home',
+    	path: '/',
     	component: Home,
-    	name: 'home',
-    	children: [
+        meta: {
+            show: true,
+        },
+        children: [
             {
-                path:'dashboard-v1',
-                name: 'nav1',
-                component: DashboardV1,
+                path: '',
+                name: 'home',
+                component: HomeDefault,
+                meta: {
+                    //
+                }
+            },
+            {
+                path: 'forms',
+                name: 'forms',
+                component: Forms,
+                meta: {
+                    //
+                },
                 children: [
                     {
                         path:'page1',
                         name: 'page1',
                         component: Page1,
-                    },   
+                    }
                 ]
             },
             {
-                path:'dashboard-v1',
-                name: 'nav2',
-                component: DashboardV1,
+                path: 'ui',
+                name: 'ui',
+                meta: {},
                 children: [
                     {
                         path:'page4',
@@ -57,24 +73,23 @@ let routes = [
                 ]
             },
             {
-                path:'dashboard-v1',
-                name: 'nav3',
-                component: DashboardV1,
+                path: 'table',
+                name: 'table',
+                meta: {},
                 children: [
                     {
                         path:'page6',
                         name: 'page6',
                         component: Page6,
-                    },
-                    
+                    }
                 ]
             },
-    	]
+        ]
     },
     {
         path: '*',
-        hidden: true,
-        redirect: { path: '/404' }
+        meta: {},
+        redirect: { path: '/' }
     }
 ];
 

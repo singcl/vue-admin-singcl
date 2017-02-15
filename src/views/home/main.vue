@@ -34,7 +34,7 @@ export default {
 		background: #f1f2f7;
 		position: absolute;
 		right: 0px;
-		top: 0px;
+		top: 60px;
 		bottom: 0px;
 		left: 230px;
 		overflow-y: scroll;
