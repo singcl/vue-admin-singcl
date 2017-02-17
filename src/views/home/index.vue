@@ -1,19 +1,23 @@
 <template>
-<div>默认home主页内容</div>
+    <div>
+        <el-switch v-model="value1" on-text="" off-text="">
+        </el-switch>
+        <el-switch v-model="value2" on-color="#13ce66" off-color="#ff4949">
+        </el-switch>
+    </div>
 </template>
-
 <script>
 export default {
 
-  name: 'index',
+    name: 'index',
 
-  data () {
-    return {
-
-    };
-  }
+    data() {
+        return {
+            value1: true,
+            value2: true
+        };
+    }
 };
 </script>
-
 <style lang="css" scoped>
 </style>
