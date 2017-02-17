@@ -16,6 +16,9 @@ export default {
             value1: true,
             value2: true
         };
+    },
+    methods: {
+        //
     }
 };
 </script>
