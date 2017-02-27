@@ -68,10 +68,12 @@ export default {
 <style lang="less" scoped>
     .aside {
         position: absolute;
-        top: 60px;
-        bottom: 0;
+        top: 0;
         left: 0;
+        padding-top: 60px;
         width: 230px;
+        min-height: 100%;
         background-color: #eaf1f1;
+        box-sizing: border-box;
     }
 </style>

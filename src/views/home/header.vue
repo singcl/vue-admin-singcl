@@ -79,9 +79,12 @@ export default {
 
 <style lang="less" scoped>
     .home-header {
+    	position: fixed;
+    	top: 0;
 		height: 60px;
 		background: #2d3034;
 		color: #c0ccda;
+		z-index: 10;
 		&__nav {
 			text-align: right;
 		    padding-right: 35px;
